@@ -25,7 +25,7 @@ public class CalculatorTest {
     assertThatCode(Calculator::new).doesNotThrowAnyException();
   }
 
-  @DisplayName("사칙 연산 결과를 반환한다")
+  @DisplayName("사칙 연산 결과를 반환한다.")
   @ParameterizedTest
   @MethodSource("calculateFourArithmetic")
   void calculateSuccess(int lValue, String operator, int rValue, int result) {
@@ -37,7 +37,7 @@ public class CalculatorTest {
     return Stream.of(
         arguments(1, "+", 3, 4),
         arguments(3, "-", 5, -2),
-        arguments(2, "*", 7, 14),
+        arguments(4, "*", 2, 8),
         arguments(15, "/", 5, 3)
     );
   }
