@@ -1,4 +1,4 @@
-package me.harry.model;
+package me.harry.domain;
 
 public class SubtractionOperator implements ArithmeticOperator{
 

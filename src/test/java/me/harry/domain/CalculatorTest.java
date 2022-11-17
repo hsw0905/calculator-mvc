@@ -1,4 +1,4 @@
-package me.harry.model;
+package me.harry.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
@@ -18,7 +18,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  * 나눗셈에서 0으로 나눌 경우 IllegalArgument 예외를 발생시킨다.
  */
 public class CalculatorTest {
-
+  private Calculator calculator = new Calculator();
   @DisplayName("계산기 객체를 생성한다.")
   @Test
   void createCalculatorSuccess() {
@@ -29,7 +29,7 @@ public class CalculatorTest {
   @ParameterizedTest
   @MethodSource("calculateFourArithmetic")
   void calculateSuccess(int lValue, String operator, int rValue, int result) {
-    int calculateResult = Calculator.calculate(new PositiveNumber(lValue), operator, new PositiveNumber(rValue));
+    int calculateResult = calculator.calculate(new PositiveNumber(lValue), operator, new PositiveNumber(rValue));
     assertThat(calculateResult).isEqualTo(result);
   }
 

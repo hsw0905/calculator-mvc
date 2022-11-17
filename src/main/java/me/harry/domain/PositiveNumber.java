@@ -1,6 +1,7 @@
-package me.harry.model;
+package me.harry.domain;
 
 public class PositiveNumber {
+
   private final String NEGATIVE_NUMBER_OR_ZERO_IS_NOT_ACCEPT_MESSAGE = "0 또는 음수는 사용할 수 없습니다.";
   private final int num;
 
@@ -10,7 +11,7 @@ public class PositiveNumber {
   }
 
   private void validate(int value) {
-    if (isNegative(value)){
+    if (isNegative(value)) {
       throw new IllegalArgumentException(NEGATIVE_NUMBER_OR_ZERO_IS_NOT_ACCEPT_MESSAGE);
     }
   }
